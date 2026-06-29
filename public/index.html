@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IdeaBloom — AI Creative Recovery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+
+  <main class="app">
+
+    <section id="authView" class="auth-layout">
+      <div class="hero">
+        <div class="logo">Idea<span>Bloom</span></div>
+        <h1>AI Creative Recovery App</h1>
+        <p>
+          IdeaBloom ეხმარება მომხმარებელს კრეატიული ბლოკის ამოცნობაში,
+          personalized writing prompt-ის მიღებაში და პროგრესის შენახვაში.
+        </p>
+      </div>
+
+      <div class="auth-card">
+        <div class="tabs">
+          <button id="showLoginBtn" class="tab active">შესვლა</button>
+          <button id="showRegisterBtn" class="tab">რეგისტრაცია</button>
+        </div>
+
+        <div id="loginForm" class="form">
+          <h2>შესვლა</h2>
+          <input id="loginEmail" type="email" placeholder="Email">
+          <input id="loginPassword" type="password" placeholder="Password">
+          <button id="loginBtn" class="primary-btn">შესვლა</button>
+        </div>
+
+        <div id="registerForm" class="form hidden">
+          <h2>რეგისტრაცია</h2>
+          <input id="registerName" type="text" placeholder="სახელი">
+          <input id="registerEmail" type="email" placeholder="Email">
+          <input id="registerPassword" type="password" placeholder="Password">
+          <button id="registerBtn" class="primary-btn">რეგისტრაცია</button>
+        </div>
+
+        <p id="authMessage" class="message"></p>
+      </div>
+    </section>
+
+    <section id="mainView" class="hidden">
+
+      <header class="topbar">
+        <div>
+          <div class="logo small">Idea<span>Bloom</span></div>
+          <p id="welcomeText" class="muted"></p>
+        </div>
+
+        <button id="logoutBtn" class="ghost-btn">გასვლა</button>
+      </header>
+
+      <section class="dashboard">
+        <div class="dash-card">
+          <span>სულ სესიები</span>
+          <strong id="totalSessions">0</strong>
+        </div>
+
+        <div class="dash-card">
+          <span>დამეხმარა</span>
+          <strong id="helpfulCount">0</strong>
+        </div>
+
+        <div class="dash-card">
+          <span>ბოლო ბლოკი</span>
+          <strong id="lastBlock">—</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="input-card">
+          <h2>აღწერე შენი კრეატიული ბლოკი</h2>
+          <p class="muted">
+            AI Workflow გააანალიზებს პრობლემას, დაადგენს ბლოკის ტიპს,
+            მოგცემს writing prompt-ს, რეკომენდაციებს და პატარა დავალებას.
+          </p>
+
+          <textarea id="userInput" placeholder="მაგ: ვწერ სევდიან მოთხრობას და ვერ ვაგრძელებ სიუჟეტს..."></textarea>
+
+          <p id="errorMsg" class="error"></p>
+
+          <button id="analyzeBtn" class="primary-btn">✦ AI Workflow-ის გაშვება</button>
+        </div>
+
+        <div id="loading" class="loading">
+          <div class="spinner"></div>
+          AI აანალიზებს ტექსტს...
+        </div>
+
+        <div id="resultBox" class="result-grid hidden">
+
+          <div class="card">
+            <span>ბლოკის ტიპი</span>
+            <strong id="blockType">—</strong>
+          </div>
+
+          <div class="card">
+            <span>განწყობა</span>
+            <strong id="mood">—</strong>
+          </div>
+
+          <div class="card full">
+            <span>ანალიზი</span>
+            <p id="summary">—</p>
+          </div>
+
+          <div class="card full">
+            <span>Writing Prompt</span>
+            <p id="writingPrompt">—</p>
+          </div>
+
+          <div class="card full">
+            <span>დღევანდელი პატარა დავალება</span>
+            <p id="actionTask">—</p>
+          </div>
+
+          <div class="card full">
+            <span>რეკომენდაციები</span>
+            <ul id="recommendations"></ul>
+          </div>
+
+          <div class="card full">
+            <span>დაგეხმარა ეს prompt?</span>
+            <div class="feedback-row">
+              <button id="helpfulBtn">✓ დამეხმარა</button>
+              <button id="notHelpfulBtn">✕ არ დამეხმარა</button>
+            </div>
+          </div>
+
+          <div class="card full">
+            <span>Progress History</span>
+            <div id="historyList"></div>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

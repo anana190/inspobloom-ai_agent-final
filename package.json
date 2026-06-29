@@ -1,0 +1,12 @@
+{
+  "name": "inspoflow",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^5.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "@google/generative-ai": "^0.1.0"
+  }
+}
