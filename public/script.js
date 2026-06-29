@@ -218,7 +218,7 @@ async function analyzeCreativeBlock() {
   resultBox.classList.add("hidden");
 
   try {
-    const response = await fetch("http://localhost:3000/analyze", {
+    const response = await fetch("/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
